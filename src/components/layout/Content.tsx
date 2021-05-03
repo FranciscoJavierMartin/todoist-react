@@ -4,7 +4,7 @@ import Tasks from '../Tasks';
 
 const Content: React.FC = () => {
   return (
-    <section>
+    <section className='content'>
       <Sidebar />
       <Tasks />
     </section>
