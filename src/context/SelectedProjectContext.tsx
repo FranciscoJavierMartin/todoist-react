@@ -17,4 +17,4 @@ export const SelectedProjectProvider:React.FC = ({ children }) => {
   );
 };
 
-export const useSelectedProject = () => useContext(SelectedProjectContext);
+export const useSelectedProjectValue = () => useContext(SelectedProjectContext);

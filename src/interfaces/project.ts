@@ -3,4 +3,5 @@ export interface Project {
   projectId: string;
   userId: string;
   docId: string;
+  key: string;
 }

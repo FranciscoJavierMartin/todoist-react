@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { FaTrashAlt } from 'react-icons/fa';
-import { useSelectedProject } from '../context/SelectedProjectContext';
+import { useSelectedProjectValue } from '../context/SelectedProjectContext';
 import { useProjectsValue } from '../context/ProjectsContext';
 import { firebase } from '../firebase';
 import { Project } from '../interfaces/project';
 
-// TODO: 2:04:44
 interface ProjectProps {
   project: Project;
 }
@@ -13,7 +12,7 @@ interface ProjectProps {
 const IndividualProject: React.FC<ProjectProps> = ({ project }) => {
   const [showConfirm, setShowConfirm] = useState(false);
   const { projects, setProjects } = useProjectsValue();
-  const { setSelectedProject } = useSelectedProject();
+  const { setSelectedProject } = useSelectedProjectValue();
 
   const deleteProject = (docId: string) => {
     firebase

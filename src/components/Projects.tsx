@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useProjectsValue } from '../context/ProjectsContext';
-import { useSelectedProject } from '../context/SelectedProjectContext';
+import { useSelectedProjectValue } from '../context/SelectedProjectContext';
 import { Project } from '../interfaces/project';
 import IndividualProject from './IndividualProject';
 
@@ -10,7 +10,7 @@ interface ProjectsProps {
 
 const Projects: React.FC<ProjectsProps> = ({ activeValue = true }) => {
   const [active, setActive] = useState(activeValue);
-  const { setSelectedProject } = useSelectedProject();
+  const { setSelectedProject } = useSelectedProjectValue();
   const { projects } = useProjectsValue();
 
   return (
