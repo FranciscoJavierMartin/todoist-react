@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   FaChevronDown,
   FaInbox,
   FaRegCalendarAlt,
   FaRegCalendar,
 } from 'react-icons/fa';
+import { useSelectedProject } from '../../context/SelectedProjectContext';
+import Projects from '../Projects';
 
 const Sidebar: React.FC = () => {
+  const { setSelectedProject } = useSelectedProject();
+  const [active, setActive] = useState('INBOX');
+  const [showProjects, setShowProjects] = useState(true);
   return (
     <div className='sidebar' data-testid='sidebar'>
       <ul className='sidebar__generic'>
@@ -35,8 +40,9 @@ const Sidebar: React.FC = () => {
         </span>
         <h2>Projects</h2>
       </div>
-      <ul className='sidebar__projects'>Projects will be here</ul>
-      Add project
+      <ul className='sidebar__projects'>
+        {showProjects && <Projects activeValue={null} />}
+      </ul>
     </div>
   );
 };
